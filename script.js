@@ -3,6 +3,7 @@ const items2 = document.querySelectorAll('.menu2 .menuItem');
 const info1 = document.querySelector('.info1')
 const info2 = document.querySelector('.info2')
 const input1 = document.querySelector('.mainBox1 input')
+const input2 = document.querySelector('#secondInput')
 const result = document.querySelector('#result')
 let base2;
 let base1;
@@ -32,7 +33,21 @@ input1.addEventListener('keyup', () => {
         .then(res => res.json())
         .then((data) => {
             input1.value = input1.value.replace(",", ".");
-            result.textContent = data.rates[base2] * Number(input1.value)
+            input2.value = data.rates[base2] * Number(input1.value)
+            info1.textContent = '1' + base1 + ' = ' + data.rates[base2] + base2;
+            fetch(`https://api.exchangerate.host/latest?base=${base2}&symbols=${base1}`).then(res => res.json()).then((data) => {
+                info2.textContent = '1' + base2 + ' = ' + data.rates[base1] + base1;
+            });
+        })
+})
+
+input2.addEventListener('keyup', () => {
+    
+    fetch(`https://api.exchangerate.host/latest?base=${base1}&symbols=${base2}`)
+        .then(res => res.json())
+        .then((data) => {
+            input2.value = input2.value.replace(",", ".");
+            input1.value =Number(input2.value)  / data.rates[base2]
             info1.textContent = '1' + base1 + ' = ' + data.rates[base2] + base2;
             fetch(`https://api.exchangerate.host/latest?base=${base2}&symbols=${base1}`).then(res => res.json()).then((data) => {
                 info2.textContent = '1' + base2 + ' = ' + data.rates[base1] + base1;
