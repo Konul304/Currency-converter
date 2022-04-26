@@ -28,7 +28,7 @@ items2.forEach((item) => {
 })
 
 input1.addEventListener('keyup', () => {
-    
+
     fetch(`https://api.exchangerate.host/latest?base=${base1}&symbols=${base2}`)
         .then(res => res.json())
         .then((data) => {
