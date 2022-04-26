@@ -6,7 +6,6 @@ const input1 = document.querySelector('.mainBox1 input')
 const result = document.querySelector('#result')
 let base2;
 let base1;
-
 items1.forEach((item) => {
     item.addEventListener('click', () => {
         items1.forEach((item) => {
