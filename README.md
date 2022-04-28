@@ -68,4 +68,4 @@ Sol inputun dəyəri cari məzənnə ilə yenidən hesablanır.
 Chrome brauzerində developer alətlərini açın. Network tabına keçin, Throttling sahəsini tapın (Default olaraq Onlayn təyin olunmuşdur) və onu Oflayn seçin. Sahələrdən birinin dəyərini dəyişdirin. İstifadəçiyə nəyinsə səhv getdiyi barədə mesaj göstərildi.
 
 
-
+Netlify link: https://willowy-valkyrie-c6cb0a.netlify.app/
